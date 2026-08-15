@@ -22,7 +22,7 @@
           <li><a href="{{ "index.xml" | relURL }}" class="rss-link" title="RSS Feed">[RSS]</a></li>
         </ul>
       </nav>
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Cycle: Neon → NFO → Light">◐ NEON</button>
+      <button class="theme-toggle" id="theme-btn" aria-label="Toggle theme" title="Cycle: Neon → NFO → Light">◐ NEON</button>
     </div>
   </header>
 
@@ -44,34 +44,35 @@
   </footer>
 
   <script>
-    // Theme toggle: dark (neon) → nfo (terminal) → light — with persistence
-    const THEMES = ['dark', 'nfo', 'light'];
-    const LABELS = { dark: '◐ NEON', nfo: '▣ NFO', light: '☀ LIGHT' };
+    ;(function() {
+      var THEMES = ['dark', 'nfo', 'light'];
+      var LABELS = { dark: '\u25d0 NEON', nfo: '\u25a3 NFO', light: '\u2600 LIGHT' };
 
-    function applyTheme(theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-      const btn = document.querySelector('.theme-toggle');
-      if (btn) btn.textContent = LABELS[theme] || LABELS.dark;
-    }
+      function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        var btn = document.getElementById('theme-btn');
+        if (btn) { btn.textContent = LABELS[theme] || LABELS.dark; }
+      }
 
-    (function() {
-      const saved = localStorage.getItem('theme');
-      if (saved && THEMES.includes(saved)) {
+      // Apply saved or system preference immediately
+      var saved = localStorage.getItem('theme');
+      if (saved && THEMES.indexOf(saved) !== -1) {
         applyTheme(saved);
-      } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
         applyTheme('light');
       } else {
         applyTheme('dark');
       }
-    })();
 
-    function toggleTheme() {
-      const current = document.documentElement.getAttribute('data-theme') || 'dark';
-      const idx = THEMES.indexOf(current);
-      const next = THEMES[(idx + 1) % THEMES.length];
-      applyTheme(next);
-      localStorage.setItem('theme', next);
-    }
+      // Attach click handler via addEventListener (minifier-safe)
+      document.getElementById('theme-btn').addEventListener('click', function() {
+        var current = document.documentElement.getAttribute('data-theme') || 'dark';
+        var idx = THEMES.indexOf(current);
+        var next = THEMES[(idx + 1) % THEMES.length];
+        applyTheme(next);
+        localStorage.setItem('theme', next);
+      });
+    })();
   </script>
 </body>
 </html>

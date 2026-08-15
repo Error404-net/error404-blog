@@ -252,6 +252,29 @@ body {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth theme transitions on key elements */
+.site-header,
+.post-entry,
+.site-footer,
+.toc,
+.post-content pre,
+.post-content blockquote,
+.tag {
+  transition: background-color 0.3s ease, color 0.3s ease,
+              border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-title,
+.site-nav a,
+.post-entry .post-title,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content a {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 /* CRT scanline overlay */
