@@ -22,7 +22,7 @@
           <li><a href="{{ "index.xml" | relURL }}" class="rss-link" title="RSS Feed">[RSS]</a></li>
         </ul>
       </nav>
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">◐</button>
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Cycle: Neon → NFO → Light">◐ NEON</button>
     </div>
   </header>
 
@@ -44,20 +44,32 @@
   </footer>
 
   <script>
-    // Theme toggle with persistence
+    // Theme toggle: dark (neon) → nfo (terminal) → light — with persistence
+    const THEMES = ['dark', 'nfo', 'light'];
+    const LABELS = { dark: '◐ NEON', nfo: '▣ NFO', light: '☀ LIGHT' };
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      const btn = document.querySelector('.theme-toggle');
+      if (btn) btn.textContent = LABELS[theme] || LABELS.dark;
+    }
+
     (function() {
       const saved = localStorage.getItem('theme');
-      if (saved) {
-        document.documentElement.setAttribute('data-theme', saved);
+      if (saved && THEMES.includes(saved)) {
+        applyTheme(saved);
       } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-        document.documentElement.setAttribute('data-theme', 'light');
+        applyTheme('light');
+      } else {
+        applyTheme('dark');
       }
     })();
 
     function toggleTheme() {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const idx = THEMES.indexOf(current);
+      const next = THEMES[(idx + 1) % THEMES.length];
+      applyTheme(next);
       localStorage.setItem('theme', next);
     }
   </script>
