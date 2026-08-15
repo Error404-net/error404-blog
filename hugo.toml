@@ -1,0 +1,37 @@
+baseURL = 'https://error404-net.github.io/error404-blog/'
+languageCode = 'en-us'
+title = 'Error404 Blog'
+theme = 'PaperMod'
+
+[params]
+  author = 'Error404'
+  description = 'Thoughts, projects, and technical deep-dives from Error404.'
+  defaultTheme = 'dark'
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+
+  [params.homeInfoParams]
+    Title = 'Error404 Blog'
+    Content = 'Projects, security research, hardware hacking, and whatever else catches my attention.'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ['HTML', 'RSS']
+
+[[menu.main]]
+  name = 'Posts'
+  url = '/posts/'
+  weight = 10
+
+[[menu.main]]
+  name = 'Tags'
+  url = '/tags/'
+  weight = 20
