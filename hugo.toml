@@ -1,4 +1,4 @@
-baseURL = 'https://error404-net.github.io/error404-blog/'
+baseURL = 'https://blog.error404.net/'
 languageCode = 'en-us'
 title = 'Error404 Blog'
 theme = 'PaperMod'
