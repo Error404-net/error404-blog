@@ -1,31 +1,31 @@
-/* Error404 Blog — Hacker/NFO Theme
-   Matches resume.error404.net design language
-   Fonts: Orbitron (display), Share Tech Mono (body/code)
+/* Error404 Blog — branded digital/NFO theme
+   Source: https://branding.error404.net/
+   Font: JetBrains Mono (UI, body, and brand treatments)
    Mobile: NFO-style monospace white-on-black with auto dark/light sense
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap');
 
 /* ═══════════════════════════════════════════
    CSS CUSTOM PROPERTIES
    ═══════════════════════════════════════════ */
 :root {
-  --bg: hsl(240, 80%, 5%);
-  --bg-card: hsl(240, 60%, 8%);
-  --bg-code: hsl(240, 50%, 10%);
-  --fg: hsl(180, 100%, 95%);
-  --fg-muted: hsl(180, 30%, 60%);
-  --cyan: hsl(180, 100%, 50%);
-  --magenta: hsl(300, 100%, 50%);
-  --electric: hsl(210, 100%, 50%);
-  --neon-green: hsl(120, 100%, 50%);
-  --neon-yellow: hsl(50, 100%, 50%);
-  --border: hsl(240, 40%, 20%);
+  --bg: #231451;
+  --bg-card: #2c1b63;
+  --bg-code: #191039;
+  --fg: #f4f1ff;
+  --fg-muted: #c6bedb;
+  --cyan: #4de1ff;
+  --magenta: #ff5fa2;
+  --electric: #4de1ff;
+  --neon-green: #37f0a6;
+  --neon-yellow: #ffe156;
+  --border: #513b86;
   --radius: 0.5rem;
-  --font-display: 'Orbitron', monospace, sans-serif;
-  --font-mono: 'Share Tech Mono', 'Courier New', monospace;
-  --glow-cyan: 0 0 5px hsl(180 100% 50%), 0 0 20px hsl(180 100% 50% / 0.3);
-  --glow-magenta: 0 0 5px hsl(300 100% 50%), 0 0 20px hsl(300 100% 50% / 0.3);
+  --font-display: 'JetBrains Mono', monospace, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+  --glow-cyan: 0 0 5px #4de1ff, 0 0 20px rgb(77 225 255 / 0.3);
+  --glow-magenta: 0 0 5px #ff5fa2, 0 0 20px rgb(255 95 162 / 0.3);
   --max-width: 52rem;
   --scanline-opacity: 0.03;
 }
@@ -50,21 +50,21 @@
   }
 }
 
-/* Force dark with data attribute */
+/* Force branded digital mode with data attribute */
 [data-theme="dark"] {
-  --bg: hsl(240, 80%, 5%);
-  --bg-card: hsl(240, 60%, 8%);
-  --bg-code: hsl(240, 50%, 10%);
-  --fg: hsl(180, 100%, 95%);
-  --fg-muted: hsl(180, 30%, 60%);
-  --cyan: hsl(180, 100%, 50%);
-  --magenta: hsl(300, 100%, 50%);
-  --electric: hsl(210, 100%, 50%);
-  --neon-green: hsl(120, 100%, 50%);
-  --neon-yellow: hsl(50, 100%, 50%);
-  --border: hsl(240, 40%, 20%);
-  --glow-cyan: 0 0 5px hsl(180 100% 50%), 0 0 20px hsl(180 100% 50% / 0.3);
-  --glow-magenta: 0 0 5px hsl(300 100% 50%), 0 0 20px hsl(300 100% 50% / 0.3);
+  --bg: #231451;
+  --bg-card: #2c1b63;
+  --bg-code: #191039;
+  --fg: #f4f1ff;
+  --fg-muted: #c6bedb;
+  --cyan: #4de1ff;
+  --magenta: #ff5fa2;
+  --electric: #4de1ff;
+  --neon-green: #37f0a6;
+  --neon-yellow: #ffe156;
+  --border: #513b86;
+  --glow-cyan: 0 0 5px #4de1ff, 0 0 20px rgb(77 225 255 / 0.3);
+  --glow-magenta: 0 0 5px #ff5fa2, 0 0 20px rgb(255 95 162 / 0.3);
   --scanline-opacity: 0.03;
 }
 
@@ -211,21 +211,21 @@
   content: '> ';
 }
 
-/* Force light with data attribute */
+/* Force branded light mode with data attribute */
 [data-theme="light"] {
-  --bg: hsl(220, 20%, 96%);
-  --bg-card: hsl(220, 20%, 92%);
-  --bg-code: hsl(220, 15%, 88%);
-  --fg: hsl(240, 80%, 8%);
-  --fg-muted: hsl(240, 20%, 40%);
-  --cyan: hsl(180, 100%, 30%);
-  --magenta: hsl(300, 80%, 35%);
-  --electric: hsl(210, 100%, 40%);
-  --neon-green: hsl(120, 80%, 30%);
-  --neon-yellow: hsl(50, 80%, 35%);
-  --border: hsl(220, 20%, 80%);
-  --glow-cyan: 0 0 3px hsl(180 100% 30% / 0.2);
-  --glow-magenta: 0 0 3px hsl(300 80% 35% / 0.2);
+  --bg: #f4f1ff;
+  --bg-card: #ffffff;
+  --bg-code: #e7e1f7;
+  --fg: #231451;
+  --fg-muted: #5e5378;
+  --cyan: #007c99;
+  --magenta: #b52d68;
+  --electric: #006f99;
+  --neon-green: #087b55;
+  --neon-yellow: #8a6b00;
+  --border: #c8bddf;
+  --glow-cyan: 0 0 3px rgb(0 124 153 / 0.2);
+  --glow-magenta: 0 0 3px rgb(181 45 104 / 0.2);
   --scanline-opacity: 0;
 }
 
@@ -335,10 +335,13 @@ body::after {
 }
 
 .site-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
   font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 900;
-  letter-spacing: 0.15em;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--cyan);
   text-decoration: none;
@@ -346,8 +349,34 @@ body::after {
   transition: text-shadow 0.3s;
 }
 
+.brand-logo {
+  width: 2.65rem;
+  height: 2.65rem;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.brand-logo-white,
+.brand-logo-black {
+  display: none;
+}
+
+[data-theme="nfo"] .brand-logo-color,
+[data-theme="light"] .brand-logo-color {
+  display: none;
+}
+
+[data-theme="nfo"] .brand-logo-white,
+[data-theme="dark"] .brand-logo-color {
+  display: block;
+}
+
+[data-theme="light"] .brand-logo-black {
+  display: block;
+}
+
 .site-title:hover {
-  text-shadow: 0 0 10px var(--cyan), 0 0 40px var(--cyan), 0 0 80px hsl(180 100% 50% / 0.2);
+  text-shadow: 0 0 10px var(--cyan), 0 0 40px var(--cyan), 0 0 80px rgb(77 225 255 / 0.2);
 }
 
 .site-nav {

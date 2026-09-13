@@ -13,7 +13,12 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="{{ .Site.BaseURL }}" class="site-title glitch">{{ .Site.Title }}</a>
+      <a href="{{ .Site.BaseURL }}" class="site-title glitch" aria-label="{{ .Site.Title }} home">
+        <img class="brand-logo brand-logo-color" src="{{ "assets/logos/libra-no-ring-multicolor.svg" | relURL }}" alt="" width="42" height="42" aria-hidden="true">
+        <img class="brand-logo brand-logo-white" src="{{ "assets/logos/libra-no-ring-white.svg" | relURL }}" alt="" width="42" height="42" aria-hidden="true">
+        <img class="brand-logo brand-logo-black" src="{{ "assets/logos/libra-no-ring-black.svg" | relURL }}" alt="" width="42" height="42" aria-hidden="true">
+        <span>{{ .Site.Title }}</span>
+      </a>
       <nav>
         <ul class="site-nav">
           {{ range .Site.Menus.main }}
