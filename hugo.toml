@@ -2,6 +2,7 @@ baseURL = 'https://blog.error404.net/'
 languageCode = 'en-us'
 title = 'Error404 Blog'
 theme = 'PaperMod'
+disableHugoGeneratorInject = true
 
 [params]
   author = 'Error404'
