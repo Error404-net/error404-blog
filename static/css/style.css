@@ -211,27 +211,86 @@
   content: '> ';
 }
 
-/* Force branded light mode with data attribute */
+/* Force monochrome light NFO mode with data attribute */
 [data-theme="light"] {
-  --bg: #f4f1ff;
-  --bg-card: #ffffff;
-  --bg-code: #e7e1f7;
-  --fg: #231451;
-  --fg-muted: #5e5378;
-  --cyan: #007c99;
-  --magenta: #b52d68;
-  --electric: #006f99;
-  --neon-green: #087b55;
-  --neon-yellow: #8a6b00;
-  --border: #c8bddf;
-  --glow-cyan: 0 0 3px rgb(0 124 153 / 0.2);
-  --glow-magenta: 0 0 3px rgb(181 45 104 / 0.2);
+  --bg: #ffffff;
+  --bg-card: #fafafa;
+  --bg-code: #f2f2f2;
+  --fg: #111111;
+  --fg-muted: #666666;
+  --cyan: #222222;
+  --magenta: #444444;
+  --electric: #333333;
+  --neon-green: #555555;
+  --neon-yellow: #111111;
+  --border: #cccccc;
+  --glow-cyan: none;
+  --glow-magenta: none;
   --scanline-opacity: 0;
+  --font-display: 'JetBrains Mono', 'Courier New', monospace;
 }
 
-/* ═══════════════════════════════════════════
-   RESET & BASE
-   ═══════════════════════════════════════════ */
+/* Light mode keeps the NFO structure, reversed onto paper */
+[data-theme="light"] body {
+  background-image: none;
+}
+
+[data-theme="light"] .site-header::before,
+[data-theme="light"] .post-header::after,
+[data-theme="light"] .site-footer::before {
+  background: var(--border);
+}
+
+[data-theme="light"] .site-title,
+[data-theme="light"] .site-title:hover {
+  color: var(--fg);
+  text-shadow: none;
+  font-family: var(--font-mono);
+}
+
+[data-theme="light"] .post-entry {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-theme="light"] .post-entry:hover {
+  border-color: #888888;
+  box-shadow: none;
+  transform: none;
+}
+
+[data-theme="light"] .tag,
+[data-theme="light"] .theme-toggle {
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+[data-theme="light"] .tag:hover,
+[data-theme="light"] .theme-toggle:hover {
+  background: #eeeeee;
+  box-shadow: none;
+}
+
+[data-theme="light"] .post-content pre,
+[data-theme="light"] .post-content blockquote,
+[data-theme="light"] .toc,
+[data-theme="light"] .post-content img {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+[data-theme="light"] .post-content blockquote {
+  border-left-color: #888888;
+  background: #f5f5f5;
+}
+
+[data-theme="light"] .toc {
+  background: #f5f5f5;
+}
+
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
