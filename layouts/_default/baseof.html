@@ -7,8 +7,8 @@
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <meta name="author" content="{{ .Site.Params.author }}">
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+  <link rel="icon" type="image/svg+xml" href="{{ "assets/logos/libra-no-ring-multicolor.svg" | relURL }}">
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ "index.xml" | absURL }}">
-  {{ hugo.Generator }}
 </head>
 <body>
   <header class="site-header">
@@ -41,10 +41,10 @@
  ┌──────────────────────────────────────┐
  │  ERROR404.NET  ·  ALL RIGHTS RESERVED │
  │  ═══════════════════════════════════  │
- │  "There are no shortcuts to any      │
- │   place worth going."                │
+ │  !ignore → return "404: Server not   │
+ │  found"                              │
  └──────────────────────────────────────┘</div>
-      <p>&copy; {{ now.Year }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a> · Powered by <a href="https://gohugo.io">Hugo</a></p>
+      <p>&copy; {{ now.Year }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></p>
     </div>
   </footer>
 
