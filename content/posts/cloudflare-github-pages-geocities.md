@@ -25,3 +25,7 @@ The tools are better now, but the spirit is familiar. People still build technic
 GeoCities gave people a place to start. GitHub Pages and Cloudflare give us a faster, safer, more capable version of that same freedom.
 
 Just with fewer spinning skull GIFs.
+
+![A spinning skull GIF from the early-web era.](/images/spinningskull.gif)
+
+*Spinning skull by [Bugb0yguy](https://commons.wikimedia.org/wiki/User:Bugb0yguy), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Spinningskull.gif).*
